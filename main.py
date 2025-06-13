@@ -12,6 +12,10 @@ class Player:
 
 
 def play_game():
+    print('\n')
+    print('Welcome to Cluedo solver.')
+    print('Remember to enter your name as the first player.')
+    print('\n')
     number_of_players = int(input("Number of players: "))
     print('Number of players recorded.')
 
@@ -51,6 +55,7 @@ def play_game():
     
     for i in range(number_of_cards):
         df.at[kill_attributes[i], 'envelope'] = 'X'
+        df.at[kill_attributes[i], player_list[0]] = 'O'
 
     # df.drop(kill_attributes, inplace=True)
 
@@ -93,6 +98,22 @@ def play_game():
                         df.at[attribute, sub_player] = 'X'
                 if df.at[attribute, player] == 'O':
                     df.at[attribute, 'envelope'] = 'X'
+                
+        for player in player_list[:number_of_players]:
+            count_O = 0
+            count_X = 0
+            for attribute in attributes:
+                if df.at[attribute, player] == 'O':
+                    count_O += 1
+                elif df.at[attribute, player] == 'X':
+                    count_X += 1
+            if count_O == number_of_cards:
+                for attribute in attributes:
+                    if df.at[attribute, player] != 'O':
+                        df.at[attribute, player] = 'X'
+            elif count_X == 25 - number_of_cards:
+                if df.at[attribute, player] != 'X':
+                        df.at[attribute, player] = 'O'
             
         
 
