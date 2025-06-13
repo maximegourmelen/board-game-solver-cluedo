@@ -134,24 +134,38 @@ def play_game():
         weapons_count = 0
         rooms_count = 0
         
-        guest_attributes = 0
-        weapons_attributes = 0
-        rooms_attributes = 0
-        print(attributes[:-18])
-        print(attributes[6:15])
-        print(attributes[15:25])
-        # for attribute in attributes[:-18]:
-        #     if df.at[attribute, 'envelope'] == 'X'
+        guest_attributes = attributes[:-18]
+        weapons_attributes = attributes[6:15]
+        rooms_attributes = attributes[15:25]
+        for attribute in guest_attributes:
+            if df.at[attribute, 'envelope'] == 'X':
+                guest_count += 1
+        for attribute in weapons_attributes:
+            if df.at[attribute, 'envelope'] == 'X':
+                weapons_count += 1
+        for attribute in rooms_attributes:
+            if df.at[attribute, 'envelope'] == 'X':
+                rooms_count += 1
 
+        guest_prob =  1 / (6 - guest_count) 
+        weapons_prob =  1 / (9 - weapons_count)
+        rooms_prob =  1 / (9 - rooms_count) 
+        print(f'Your chance of winning by guessing randomly is: {round(guest_prob * weapons_prob * rooms_prob * 100, 2)}%.')
+
+    def spaces():
+        for _ in range(3):
+            print('\n')
+        return None
 
     while True:
+        
         probability()
+        spaces()
         play_round()
         for _ in range(20):
             check_df()
         print(df)
-        for _ in range(3):
-            print('\n')
+        spaces()
 
 
 play_game()
