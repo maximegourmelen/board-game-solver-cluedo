@@ -1,0 +1,166 @@
+{
+  "version": 1,
+  "current_room": "dining room",
+  "config": {
+    "players": [
+      "Player 1",
+      "Player 2",
+      "Player 3",
+      "Player 4",
+      "Player 5",
+      "Player 6"
+    ],
+    "self_player": "Player 1",
+    "hand_counts": {
+      "Player 1": 4,
+      "Player 2": 4,
+      "Player 3": 4,
+      "Player 4": 3,
+      "Player 5": 3,
+      "Player 6": 3
+    },
+    "cards": [
+      {
+        "name": "mustard",
+        "category": "suspect"
+      },
+      {
+        "name": "plum",
+        "category": "suspect"
+      },
+      {
+        "name": "green",
+        "category": "suspect"
+      },
+      {
+        "name": "peacock",
+        "category": "suspect"
+      },
+      {
+        "name": "scarlet",
+        "category": "suspect"
+      },
+      {
+        "name": "white",
+        "category": "suspect"
+      },
+      {
+        "name": "knife",
+        "category": "weapon"
+      },
+      {
+        "name": "candlestick",
+        "category": "weapon"
+      },
+      {
+        "name": "pistol",
+        "category": "weapon"
+      },
+      {
+        "name": "poison",
+        "category": "weapon"
+      },
+      {
+        "name": "trophy",
+        "category": "weapon"
+      },
+      {
+        "name": "rope",
+        "category": "weapon"
+      },
+      {
+        "name": "bat",
+        "category": "weapon"
+      },
+      {
+        "name": "ax",
+        "category": "weapon"
+      },
+      {
+        "name": "dumbbell",
+        "category": "weapon"
+      },
+      {
+        "name": "hall",
+        "category": "room"
+      },
+      {
+        "name": "dining room",
+        "category": "room"
+      },
+      {
+        "name": "kitchen",
+        "category": "room"
+      },
+      {
+        "name": "patio",
+        "category": "room"
+      },
+      {
+        "name": "observatory",
+        "category": "room"
+      },
+      {
+        "name": "theater",
+        "category": "room"
+      },
+      {
+        "name": "living room",
+        "category": "room"
+      },
+      {
+        "name": "spa",
+        "category": "room"
+      },
+      {
+        "name": "guest house",
+        "category": "room"
+      }
+    ]
+  },
+  "events": [
+    {
+      "event_id": "ac5ce1b96c",
+      "note": "Starting hand",
+      "owner": "Player 1",
+      "card": "mustard",
+      "source": "setup",
+      "kind": "known_card"
+    },
+    {
+      "event_id": "149cb2c673",
+      "note": "Starting hand",
+      "owner": "Player 1",
+      "card": "peacock",
+      "source": "setup",
+      "kind": "known_card"
+    },
+    {
+      "event_id": "f88211211d",
+      "note": "Starting hand",
+      "owner": "Player 1",
+      "card": "candlestick",
+      "source": "setup",
+      "kind": "known_card"
+    },
+    {
+      "event_id": "804082c164",
+      "note": "Starting hand",
+      "owner": "Player 1",
+      "card": "pistol",
+      "source": "setup",
+      "kind": "known_card"
+    },
+    {
+      "event_id": "d3db5b3efe",
+      "note": "",
+      "suggester": "Player 2",
+      "suspect": "mustard",
+      "weapon": "knife",
+      "room": "hall",
+      "responder": "Player 3",
+      "shown_card": null,
+      "kind": "suggestion"
+    }
+  ]
+}
