@@ -2,22 +2,19 @@
 
 A local Python desktop app for tracking and solving your six-player Cluedo games.
 
-## What Changed
+## Highlights
 
-- Replaced the old single-file command-line prototype with a `tkinter` desktop app
-- Kept the exact suspects, weapons, and rooms from the original `main.py`
-- Added an event-driven solver that recomputes deductions from scratch after every edit
-- Added undo/redo, autosave, save/load, editable history, contradiction reporting, and suggestion recommendations
+- Keeps the exact suspects, weapons, and rooms from the original project
+- Recomputes deductions from scratch after every edit so mistakes are recoverable
+- Includes undo/redo, autosave, save/load, editable history, contradiction reporting, and suggestion recommendations
+- Uses a notebook-first themed Tk desktop interface built with `ttkbootstrap`
+- Gives the deduction grid most of the screen, with a dedicated analysis workspace and collapsible activity drawer
 
-## Features
+## Installation
 
-- Six-player setup with uneven hand sizes
-- Starting-hand entry for your own cards
-- Structured logging for suggestions, responders, known shown cards, and manual overrides
-- Deduction notebook grid for players plus the envelope
-- Contradiction detection when an entry conflicts with the current notebook
-- Recommendation panel for best suspect/weapon pairs in your current room
-- JSON session saves with autosave support
+```bash
+python3 -m pip install -r requirements.txt
+```
 
 ## Run
 
@@ -38,4 +35,5 @@ python3 -m unittest discover -s tests -v
 - `cluedo_solver/solver.py`: deduction engine and recommendation scoring
 - `cluedo_solver/storage.py`: JSON save/load helpers
 - `cluedo_solver/session.py`: controller with undo/redo and autosave
-- `cluedo_solver/ui.py`: `tkinter` desktop interface
+- `cluedo_solver/theme.py`: centralized UI tokens and `ttkbootstrap` theme setup
+- `cluedo_solver/ui.py`: desktop interface
